@@ -24,7 +24,7 @@ public class BasketTest {
         basket.items.put("butter", 4);
         basket.items.put("milk", 2);
         basket.items.put("coffee", 7);
-        Assertions.assertTrue(basket.total() == 13);
+        Assertions.assertEquals(13, basket.total());
     }
 
     @Test
@@ -33,6 +33,6 @@ public class BasketTest {
         basket.items.put("butter", 4);
         basket.items.put("milk", 2);
         basket.items.put("coffee", 7);
-        Assertions.assertFalse(basket.total() == 10);
+        Assertions.assertNotEquals(10, basket.total());
     }
 }
