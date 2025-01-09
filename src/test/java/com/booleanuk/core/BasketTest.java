@@ -14,6 +14,25 @@ public class BasketTest {
     @Test
     public void addItemThatAlreadyExists() {
         Basket basket = new Basket();
+        basket.items.put("butter", 4);
         Assertions.assertFalse(basket.add("butter", 4));
+    }
+
+    @Test
+    public void getCorrectTotalCost() {
+        Basket basket = new Basket();
+        basket.items.put("butter", 4);
+        basket.items.put("milk", 2);
+        basket.items.put("coffee", 7);
+        Assertions.assertTrue(basket.total() == 13);
+    }
+
+    @Test
+    public void getWrongTotalCost() {
+        Basket basket = new Basket();
+        basket.items.put("butter", 4);
+        basket.items.put("milk", 2);
+        basket.items.put("coffee", 7);
+        Assertions.assertFalse(basket.total() == 10);
     }
 }
